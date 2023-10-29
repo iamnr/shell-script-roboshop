@@ -27,27 +27,21 @@ VALIDATE(){
     fi
 }
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
-
+cp /home/centos/shell-script-roboshop/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "Copied MongoDB repo into yum.repos.d"
 
 yum install mongodb-org -y &>> $LOGFILE
-
 VALIDATE $? "Instalation of MongoDB"
 
 systemctl enable mongod &>> $LOGFILE
-
 VALIDATE $? "Enabling of MongoDB"
 
 systemctl start mongod &>> $LOGFILE
-
 VALIDATE $? "Starting of MongoDB"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
-
 VALIDATE $? "Edited MongoDB conf"
 
 systemctl restart mongod &>> $LOGFILE
-
 VALIDATE $? "Restarting MonogoDB"
 
