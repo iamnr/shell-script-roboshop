@@ -69,7 +69,7 @@ VALIDATE $? "Enabling Catalogue"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "Starting Catalogue"
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/centos/shell-script-roboshop/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "Copying mongo repo"
 
 yum install mongodb-org-shell -y &>> $LOGFILE
