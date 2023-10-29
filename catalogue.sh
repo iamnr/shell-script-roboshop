@@ -40,7 +40,7 @@ then
     useradd roboshop &>> $LOGFILE
     VALIDATE $? "User ROBOSHOP creation"  
 else 
-    continue
+    echo " Roboshop user already exists so not creating a new user"
 fi
 
 mkdir /app &>> $LOGFILE
