@@ -40,7 +40,7 @@ then
     useradd roboshop &>> $LOGFILE
     VALIDATE $? "User ROBOSHOP creation"  
 else 
-    echo " Roboshop user already exists so not creating a new user"
+    echo "Roboshop user already exists so not creating a new user"
 fi
 
 mkdir /app &>> $LOGFILE
@@ -57,7 +57,7 @@ VALIDATE $? "unzipping catalogue"
 npm install &>> $LOGFILE
 VALIDATE $? "Installing dependencies"
 
-cp /home/centos/shell-script-roboshop /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/centos/shell-script-roboshop/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? "copying catalogue.service"
 
 systemctl daemon-reload &>> $LOGFILE
