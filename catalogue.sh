@@ -38,9 +38,9 @@ id roboshop &>> $LOGFILE
 if [ $? -ne 0 ]
 then
     useradd roboshop &>> $LOGFILE
-    VALIDATE $? "User ROBOSHOP creation"
-else
-    
+    VALIDATE $? "User ROBOSHOP creation"  
+else 
+    continue
 fi
 
 mkdir /app &>> $LOGFILE
